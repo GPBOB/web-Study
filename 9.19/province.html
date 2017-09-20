@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="province">
+    <option value="0" id="1">北京市</option>
+    <option value="1" id="2">四川省</option>
+    <option value="2" id="3">河北省</option>
+    <option value="3" id="4">湖南省</option>
+
+</select>
+<select name="" id="city">
+    <option value="1">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+</select>
+<button type="submit" >提交</button>
+</body>
+<script type="text/javascript">
+    var btn=document.getElementsByTagName("button")[0];
+    var province=document.getElementsByTagName("option");
+    var province=document.getElementById("province");
+    var city=document.getElementById("city");
+    var citys=[["北京市"],["成都市","自贡市","绵阳市"],["邯郸市"],["长沙市"]];
+
+    province.onclick=function () {
+        city.innerHTML="";
+        var id=this.value;//获取省的值
+            for(var  i=0;i<citys[id].length;i++){
+                var opt=document.createElement("option");
+            opt.innerHTML=citys[id][i];
+            city.appendChild(opt);
+            }
+
+    }
+
+
+</script>
+</html>

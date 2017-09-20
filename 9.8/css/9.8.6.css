@@ -1,0 +1,9 @@
+pre{
+    border: 1px dashed #000000;
+}
+#box{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

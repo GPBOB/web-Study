@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select>
+    <option value="1">1</option>
+</select>
+<button type="submit" >提交</button>
+</body>
+<script type="text/javascript">
+    var sec=document.getElementsByTagName("select")[0];
+var btn=document.getElementsByTagName("button")[0];
+var opt1=document.getElementsByTagName("option");
+btn.onclick=function () {
+    var opt=document.createElement("option");
+    for(let i=0;i<opt1.length;i++){
+        opt.innerText=i;
+        sec.appendChild(opt);
+    }
+
+}
+
+</script>
+</html>

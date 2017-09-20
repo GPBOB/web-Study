@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="num" value="">
+<input type="submit" id="tj">
+</body>
+<script type="text/javascript">
+    var num=document.getElementById("num");
+    var numm=num.value;
+    var btn=document.getElementById("tj");
+
+    btn.onclick=function () {
+        var num1=/\b[0-9]+\b/;
+        if(num1.test(numm)){
+            alert("ddd");
+        }
+        if(!num1.test(numm)) {
+            alert('只能输入数字');
+        }
+
+        alert(typeof numm)
+    }
+</script>
+</html>

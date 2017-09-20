@@ -1,0 +1,17 @@
+span{
+    float: left;
+}
+ul{
+    float: left;
+    margin-top: 1px ;
+}
+
+li{
+    list-style: none;
+    width: 19px;
+    height: 19px;
+    background: url("../img/star.png") no-repeat;
+    float: left;
+    cursor: pointer;
+}
+

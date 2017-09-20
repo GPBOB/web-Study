@@ -1,0 +1,19 @@
+body{
+    background-color: #333333;
+}
+#drag{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 200px;
+    height: 150px;
+    border: 2px solid;
+    color: #ffffff;
+    cursor: move;
+}
+h2,span{
+    color: yellow;
+}
+h2{
+    border: 2px solid white;
+}

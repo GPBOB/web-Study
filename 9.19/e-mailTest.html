@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式验证邮箱</title>
+</head>
+<body>
+<input type="text" id="email"><br><br>
+<input type="submit" id="qr">
+</body>
+<script type="text/javascript">
+
+
+    var btn=document.getElementById("qr");
+    function test1() {
+        var email=document.getElementById("email").value;
+
+        var emailReg=/^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-])+((\.[0-9a-zA-Z_-]{2,3}){1,2})$/;
+        if(emailReg.test(email)){
+            alert("success");
+        }
+        else{
+            alert("fail");
+        }
+    }
+
+    btn.onclick=test1;
+
+
+
+</script>
+<script src="enterKeyDown.js" type="text/javascript" charset="UTF-8"></script>
+</html>

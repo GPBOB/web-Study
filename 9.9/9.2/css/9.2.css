@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    width: 800px;
+    margin: 0 auto;
+}
+li{
+    width: 80px;
+    height: 30px;
+    list-style: none;
+    float:left;
+    background-color: #225D98;
+}
+a{
+    line-height: 30px;
+    padding-left: 10px;
+    text-align: center;
+    color: #000;
+}
+ .t1{
+     display: none;
+     margin-top: 5px;
+ }

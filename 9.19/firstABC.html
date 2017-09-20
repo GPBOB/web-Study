@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首写字母大小写</title>
+</head>
+<body>
+<input type="text" id="t1" placeholder="首字母大写">
+<input type="text" id="t2" placeholder="全部字母大写">
+<input type="submit" id="tj" pa>
+</body>
+<script type="text/javascript">
+    var t1=document.getElementById("t1").value;
+    var t2=document.getElementById("t2").value;
+    var tj=document.getElementById("tj");
+
+    function t1tj() {
+var t1Reg=/^[A-Z]/;
+        var t2Reg=/\b[A-Z]+\b/;
+if(t1 =""&&(t1.charAt(0)>'Z'||t1.charAt(0)<'A')){
+    alert("t1  success");
+}
+else {
+    alert("t1 fail");
+}
+
+    if(t1=""&&(t2Reg.test(t2))){
+        alert("t2  success");
+    }
+    else {
+        alert("t2 fail");
+    }
+    }
+tj.onclick=t1tj;
+
+    //未成功
+</script>
+</html>
