@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告浮起</title>
+</head>
+<style type="text/css">
+    div{
+        width:100px;
+        height: 100px;
+        position: absolute;
+        background-color: sienna;
+        top: 100px;
+        left: 0px;
+      z-index: 1;
+    }
+</style>
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="t11" ></div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+<script type="application/javascript">
+
+    var timer=null;
+    function goto(o) {
+        var t1=document.getElementById(o);
+        t1.style.top=t1.offsetTop+'px';
+window.setInterval(function () {
+    var height=document.documentElement.scrollTop+document.body.scrollTop+t1.offsetTop;
+    var top=parseInt(t1.style.top);
+    if(height!=top){
+        var go=height-parseInt((height-top)*0.9);
+        t1.style.top=go+'px';
+    }
+},50);
+    }
+    goto('t11');
+</script>
+</html>

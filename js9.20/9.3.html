@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    #box{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+    }
+    #title{
+background-color: #000000;
+        color: #ffffff;
+        user-select: none;
+        -moz-user-select: none;
+        margin: 0px;
+        padding: 0px;
+        cursor: move;
+    }
+</style>
+<body>
+<div id="box">
+    <h4 id="title">点击拖动</h4>
+</div>
+</body>
+<script type="application/javascript">
+    var title=document.getElementById("title");
+    var box=document.getElementById("box");
+    var isMove=false;
+    var left1=0;
+    var top1=0;
+    function mousedown1(e) {
+        var e=e||event||window.event;
+          x=e.clientX;
+         y=e.clientY;
+        if(e.preventDefault)
+        {
+            e.preventDefault();
+        }
+        else{
+            e.returnValue=false;
+        }
+        left1=parseInt(getComputedStyle(box).left);
+
+        top1=parseInt(getComputedStyle(box).top);
+        isMove=true;
+    }
+    function mousemove1(e) {
+        var e=e||event||window.event;
+        if(e.preventDefault)
+        {
+            e.preventDefault();
+        }
+        else{
+            e.returnValue=false;
+        }
+        if(isMove){
+        box.style.left=left1+e.clientX-x+'px';
+        box.style.top=top1+e.clientY-y+'px';
+        }
+    }
+    function mouseup1(e) {
+        if(isMove){
+            isMove=false;
+        }
+    }
+    title.onmousedown=mousedown1;
+    document.onmousemove=mousemove1;//需要写docment,否则会有bug
+    title.onmouseup=mouseup1;
+</script>
+</html>

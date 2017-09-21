@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    #container{
+        position: relative;
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        visibility: visible;
+        border: 1px solid;
+    }
+    #cul{
+        position: relative;
+        width: 1200px;
+        top: 0px;
+        left: 0px;
+        height: 400px;
+        list-style-type: none;
+    }
+    ul li{
+        float: left;
+overflow: hidden;
+    }
+    img{
+        width: 400px;
+        height: 400px;
+    }
+</style>
+<body>
+<div id="container">
+    <ul id="cul">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+<script type="application/javascript">
+    var time=3;
+    var cul=document.getElementById("cul");
+
+    function mm() {
+        var left=getComputedStyle(cul).left;
+        left=parseInt(left);
+        cul.style.left=(left-1)+'px';
+        if(left*-1==parseInt(getComputedStyle(cul).width)){
+            cul.innerHTML += "fgad";
+console.log(cul.innerHTML);
+        }
+    }
+    timer=setInterval(mm,time);
+    cul.onmouseover=function () {
+        clearInterval(timer);
+    }
+    cul.onmouseout=function () {
+        timer=setInterval(mm,time);
+    }
+    mm();
+</script>
+</html>

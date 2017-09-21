@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左右滚动</title>
+</head>
+<style type="text/css">
+    body{
+        text-align: center;
+    }
+#container{
+    width: 400px;
+    visibility: visible;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid ;
+}
+    #cul{
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        z-index: 1;
+        width: 1600px;
+        left: 0px;
+    }
+    ul li{
+        overflow: hidden;
+        float: left;
+        margin:0 5px;
+    }
+    img{
+        height: 400px;
+        width: 400px;
+    }
+</style>
+<body>
+<div id="container">
+    <ul id="cul">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+<script type="application/javascript">
+    var time=3;
+    var cul=document.getElementById("cul");
+
+    function mm() {
+        var left=getComputedStyle(cul).left;
+        left=parseInt(left);
+        cul.style.left=(left-1)+'px';
+console.log(left);
+        if(left*-1==parseInt(getComputedStyle(cul).width)){
+            console.log(getComputedStyle(cul).width);
+            cul.innerHTML+=cul.innerHTML;
+
+        }
+    }
+    timer=setInterval(mm,time);
+    cul.onmouseover=function () {
+        clearInterval(timer);
+    }
+    cul.onmouseout=function () {
+        timer=setInterval(mm,time);
+    }
+    mm();
+</script>
+</html>

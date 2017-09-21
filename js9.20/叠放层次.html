@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>叠放层次</title>
+</head>
+<style type="text/css">
+    #p1,#p2{
+        width: 100px;
+        height:100px;
+        position: absolute;
+    }
+    #p1{
+        background-color: gray;
+        top:100px;
+        left: 100px;
+        z-index: 1;
+    }
+    #p2{
+        background-color: red;
+        top: 50px;
+        left: 50px;
+        z-index: 2;
+    }
+</style>
+<body>
+<div id="p1"></div>
+<div id="p2"></div>
+<input type="submit" value="gaibian">
+</body>
+<script type="application/javascript">
+    var p1=document.getElementById("p1");
+    var p2=document.getElementById("p2");
+    var btn=document.getElementsByTagName("input")[0];
+    btn.onclick=function () {
+if(p1.style.zIndex==1){
+    p2.style.zIndex=1;
+    p1.style.zIndex=2;
+}
+else{
+    p2.style.zIndex=2;
+    p1.style.zIndex=1;
+}
+    }
+</script>
+</html>
